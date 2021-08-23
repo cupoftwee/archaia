@@ -1,3 +1,10 @@
+/* CSS Vars */
+:root {
+  --border-dark: #395067;
+  --border-light: #6C839A;
+}
+
+
 /* Fonts - TY Joel Carrouche for the excellent Norse font */
 @font-face {
   font-family: 'norse';
@@ -15,6 +22,47 @@
 
 }
 
+
+/* Background Image */
+html::before {
+  content: "";
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgb(32,43,56);
+  background: radial-gradient(circle, rgba(57,80,103,1) 0%, rgba(32,43,56,1) 75%);
+  z-index: -1;
+}
+html::after {
+  content: "";
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-image: url('./images/branches_foreground.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 1;
+}
+
+
 /* Typography */
 h1 {
   font-family: 'norse', 'IM Fell English SC', serif;
@@ -22,6 +70,7 @@ h1 {
 h2, h3, h4, h5 {
   font-family: 'IM Fell English SC', serif;
 }
+
 
 /*  Splash Section */
 .splash {
@@ -40,13 +89,94 @@ h2, h3, h4, h5 {
   letter-spacing: 1rem;
 }
 
+
 /* Server Info */
 .server-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
+.server-info ul {
+  list-style: none;
+}
+.server-info ul li {
+  margin-bottom: 0.5rem;
+}
+.server-ip {
+  display: flex;
+}
+.server-ip-label {
+  margin-right: 1rem;
+}
+
+
+/*  Server Progression */
+.progression-boss-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-top: 0.5rem;
+}
+.progression-boss-list-item {
+  padding: 0.4rem;
+  margin: 0.5rem 1rem;
+  border: 1px solid var(--border-dark);
+  border-radius: 12px;
+  transition: 0.2s;
+}
+.progression-boss-list-item:hover {
+  border: 1px solid var(--border-light);
+  background-color: #1F364D;
+}
+
+
+/* Boss Icons */
+.boss-icon {
+  display: block;
+  background-size: cover;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.boss-eikthyr {
+  background-image: url('./images/eikthyr_trophy.webp');
+}
+.boss-eikthyr.boss-defeated {
+  background-image: url('./images/eikthyr_trophy_defeated.webp');
+}
+
+.boss-elder {
+  background-image: url('./images/the_elder_trophy.webp');
+}
+.boss-elder.boss-defeated {
+  background-image: url('./images/the_elder_trophy_defeated.webp');
+}
+
+.boss-bonemass {
+  background-image: url('./images/bonemass_trophy.webp');
+}
+.boss-bonemass.boss-defeated {
+  background-image: url('./images/bonemass_trophy_defeated.webp');
+}
+
+.boss-moder {
+  background-image: url('./images/moder_trophy.webp');
+}
+.boss-moder.boss-defeated {
+  background-image: url('./images/moder_trophy_defeated.webp');
+}
+
+.boss-yagluth {
+  background-image: url('./images/yagluth_trophy.webp');
+}
+.boss-yagluth.boss-defeated {
+  background-image: url('./images/yagluth_trophy_defeated.webp');
+}
+
 
 /* About Server */
 .about-server {
